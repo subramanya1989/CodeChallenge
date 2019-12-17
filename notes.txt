@@ -1,0 +1,55 @@
+Technical Information :
+----------------------
+
+* Visual code editor
+
+* Angular Version details :
+Package                           Version
+-----------------------------------------------------------
+@angular-devkit/architect         0.13.9
+@angular-devkit/build-angular     0.13.9
+@angular-devkit/build-optimizer   0.13.9
+@angular-devkit/build-webpack     0.13.9
+@angular-devkit/core              7.3.9
+@angular-devkit/schematics        7.3.9
+@angular/cli                      7.3.9
+@ngtools/webpack                  7.3.9
+@schematics/angular               7.3.9
+@schematics/update                0.13.9
+rxjs                              6.3.3
+typescript                        3.2.4
+webpack                           4.29.0
+
+* Node version - 10.15.1
+* NPM Version - 6.4.1
+* Bootstrap MDN
+* Few Pngs from google
+
+
+
+Steps to Run the Application:
+----------------------------
+
+1) Extract the CodeChallenge.zip file to a folder.
+2) Update the folder with node_modules by running "npm install" command in command promt.
+3) Once the node_modules are installed please run command "ng serve" to start the server.
+4) Open "localhost:4200" link to launch the Application.
+
+
+
+Application User Manual :
+-------------------------
+* Application has 2 pages.
+* HomePage which has the link to Giphy Dashboard.
+* Giphy Dashboard have the pre saved Keyword which by clicking user can view Gifs.
+* User can search his desired keyword which saves for his later use also get the Gifs for him.
+* Gif will be diplayed in the page where by clicking will Preview the Gif in Popup.
+
+
+General Note:
+--------------
+
+* Attached screenshots of all units of Application.
+
+
+ 

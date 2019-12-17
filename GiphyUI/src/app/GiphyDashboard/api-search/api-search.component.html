@@ -1,0 +1,64 @@
+<div class="container">  
+  <div class="row history">
+    <!--Create a placeholder section/div to hold the buttons-->
+    <div class="col-md-7 col-sm-12 col-xs-12 mb-2" id="giphy-buttons">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h5><img src="assets/images/search_keyword.png" alt="Keyword"> Select a Keyword</h5>
+        </div>
+        <!--New buttons created by the user will be updated here-->
+        <div class="card-body bg-secondary">
+          <span class="btnSpan" *ngFor="let tag of searchHistoryTags">
+            <button (click)="performSearch(tag)" class="btn btn-dark my-2 my-sm-0" type="submit" id="submit-button">  {{tag}}  </button>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-5 col-sm-12 col-xs-12 mb-2">
+      <!--Create a search box and submit/add button-->
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h5><img class="pr-2" src="assets/images/add_key.png" alt="Add Keyword">Add/Search Keyword</h5>
+        </div>
+        <div class="card-body bg-secondary">
+          <p>For best results, Enter meaningful keyword.<b> For example, Flowers</b></p>
+          <div class="form-inline my-2 my-lg-0">
+            <input name="search" class="form-control mr-sm-2" type="search" placeholder="Enter Keyword" #searchTerm>
+            <button (click)="saveSearchHistory(searchTerm)" class="btn btn-dark my-2 my-sm-0" type="submit" id="submit-button">  Search  </button>
+          </div>
+          <div class="error" *ngIf="showError">{{ErrorText}} </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row pt-4">
+    <div class="col-md-12">
+      <!--Create a section for displaying the gif search results-->
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h5><img src="assets/images/search_key.png" alt="magnifying glass icon"> Gif search results</h5>
+        </div>
+        <div class="card-body bg-secondary" id="results-div">
+          <div class="row">
+            <div class="col-md-12">
+             {{loadingMsg}}
+            </div>
+          </div>
+          
+          <div class="row">
+              <div *ngFor="let gifs of allGiphies; let i = index" >  
+                <img id="imgTumb" src="{{ gifs.images.original_still.url }}" [attr.data-index]="i" (click)="imgClick($event)">    
+              </div>    
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup" [hidden]="!showPopup">
+    <button class="close" (click)="handlePopupView('')">X</button>
+    <img #imagePopup src="" class="popupImage">
+  </div>
+</div>
